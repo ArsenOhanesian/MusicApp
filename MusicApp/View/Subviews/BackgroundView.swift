@@ -20,6 +20,7 @@ struct BackgroundView: View {
     }
 }
 
+// MARK: - Preview
 struct BackgroundView_Previews: PreviewProvider {
     static var previews: some View {
         BackgroundView()

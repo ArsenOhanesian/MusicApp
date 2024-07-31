@@ -15,6 +15,7 @@
 		04C234B72C5A575D00BFE321 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C234B62C5A575D00BFE321 /* BackgroundView.swift */; };
 		04C234BA2C5A58AD00BFE321 /* Font + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C234B92C5A58AD00BFE321 /* Font + extension.swift */; };
 		04C234BC2C5A5D9400BFE321 /* MusicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C234BB2C5A5D9400BFE321 /* MusicCell.swift */; };
+		04C234BE2C5A5DEE00BFE321 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C234BD2C5A5DEE00BFE321 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		04C234B62C5A575D00BFE321 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		04C234B92C5A58AD00BFE321 /* Font + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font + extension.swift"; sourceTree = "<group>"; };
 		04C234BB2C5A5D9400BFE321 /* MusicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCell.swift; sourceTree = "<group>"; };
+		04C234BD2C5A5DEE00BFE321 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		04BCB5A92C5A500100E47885 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04C234BD2C5A5DEE00BFE321 /* Model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C234BE2C5A5DEE00BFE321 /* Model.swift in Sources */,
 				04BCB59E2C5A4FBD00E47885 /* PlayerView.swift in Sources */,
 				04BCB59C2C5A4FBD00E47885 /* MusicAppApp.swift in Sources */,
 				04C234B72C5A575D00BFE321 /* BackgroundView.swift in Sources */,

@@ -37,6 +37,8 @@ struct MusicCell: View{
     }
 }
 
+
+// MARK: - Preview
 struct MusicCell_Previews: PreviewProvider {
     static var previews: some View {
         MusicCell(name: "Name", author: "Author", time: "Time")
