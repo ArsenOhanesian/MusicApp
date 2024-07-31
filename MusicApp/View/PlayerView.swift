@@ -18,25 +18,7 @@ struct PlayerView: View {
             BackgroundView()
             
             List{
-                HStack{
-                    Color.white
-                        .frame(width: 60, height: 60)
-                        .cornerRadius(10)
-                    
-                    VStack (alignment: .leading){
-                        Text("Name")
-                            .nameFont()
-                        Text("Author")
-                            .artistFont()
-                    }
-                    
-                    Spacer()
-                    
-                    Text("Time")
-                        .artistFont()
-                }
-                .listRowBackground(Color.clear)
-                .listRowSeparator(.hidden)
+                MusicCell(name: "Name", author: "Author", time: "Time")
             }
             .listStyle(.plain)
             
@@ -44,8 +26,6 @@ struct PlayerView: View {
         }
     }
 }
-
-
 
 // MARK: - Preview
 struct ContentView_Previews: PreviewProvider {
