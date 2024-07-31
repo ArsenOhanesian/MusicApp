@@ -11,6 +11,9 @@
 		04BCB59E2C5A4FBD00E47885 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BCB59D2C5A4FBD00E47885 /* PlayerView.swift */; };
 		04BCB5A02C5A4FC200E47885 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04BCB59F2C5A4FC200E47885 /* Assets.xcassets */; };
 		04BCB5A32C5A4FC200E47885 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04BCB5A22C5A4FC200E47885 /* Preview Assets.xcassets */; };
+		04C234B42C5A56D900BFE321 /* Color + extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C234B32C5A56D900BFE321 /* Color + extension .swift */; };
+		04C234B72C5A575D00BFE321 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C234B62C5A575D00BFE321 /* BackgroundView.swift */; };
+		04C234BA2C5A58AD00BFE321 /* Font + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C234B92C5A58AD00BFE321 /* Font + extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		04BCB59D2C5A4FBD00E47885 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		04BCB59F2C5A4FC200E47885 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04BCB5A22C5A4FC200E47885 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		04C234B32C5A56D900BFE321 /* Color + extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color + extension .swift"; sourceTree = "<group>"; };
+		04C234B62C5A575D00BFE321 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		04C234B92C5A58AD00BFE321 /* Font + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font + extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,11 +57,11 @@
 		04BCB59A2C5A4FBD00E47885 /* MusicApp */ = {
 			isa = PBXGroup;
 			children = (
+				04C234B82C5A588800BFE321 /* Helpers */,
 				04BCB5AB2C5A501B00E47885 /* View */,
 				04C234B12C5A52A600BFE321 /* ViewModel */,
 				04BCB5A92C5A500100E47885 /* Model */,
 				04BCB59B2C5A4FBD00E47885 /* MusicAppApp.swift */,
-				04BCB59D2C5A4FBD00E47885 /* PlayerView.swift */,
 				04BCB59F2C5A4FC200E47885 /* Assets.xcassets */,
 				04BCB5A12C5A4FC200E47885 /* Preview Content */,
 			);
@@ -80,6 +86,8 @@
 		04BCB5AB2C5A501B00E47885 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04C234B52C5A574600BFE321 /* Subviews */,
+				04BCB59D2C5A4FBD00E47885 /* PlayerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -89,6 +97,31 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		04C234B22C5A56BE00BFE321 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				04C234B92C5A58AD00BFE321 /* Font + extension.swift */,
+				04C234B32C5A56D900BFE321 /* Color + extension .swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		04C234B52C5A574600BFE321 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				04C234B62C5A575D00BFE321 /* BackgroundView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		04C234B82C5A588800BFE321 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				04C234B22C5A56BE00BFE321 /* Extensions */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +196,9 @@
 			files = (
 				04BCB59E2C5A4FBD00E47885 /* PlayerView.swift in Sources */,
 				04BCB59C2C5A4FBD00E47885 /* MusicAppApp.swift in Sources */,
+				04C234B72C5A575D00BFE321 /* BackgroundView.swift in Sources */,
+				04C234B42C5A56D900BFE321 /* Color + extension .swift in Sources */,
+				04C234BA2C5A58AD00BFE321 /* Font + extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
