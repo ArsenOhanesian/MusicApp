@@ -12,7 +12,6 @@ struct MusicAppApp: App {
     var body: some Scene {
         WindowGroup {
             PlayerView()
-                .preferredColorScheme(.dark)
         }
     }
 }

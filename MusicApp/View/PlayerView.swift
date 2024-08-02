@@ -14,13 +14,12 @@ struct PlayerView: View {
     
     // MARK: - Body
     var body: some View {
-        
         NavigationStack{
+           
             ZStack{
-                
                 BackgroundView()
                 
-                /// List of SOngs
+                /// List of Songs
                 List{
                     ForEach(vm.songs){ song in
                         SongCell(song: song)
@@ -29,7 +28,6 @@ struct PlayerView: View {
                 .listStyle(.plain)
                 
             }
-            
             // MARK: - Navigation Bar
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -44,9 +42,9 @@ struct PlayerView: View {
                 }
             }
             // MARK: File's Sheet
-            .sheet(isPresented: $showFiles) {
+            .sheet(isPresented: $showFiles, content: {
                 ImportFileManager(songs: $vm.songs)
-            }
+            })
 
         }
     }
@@ -56,6 +54,5 @@ struct PlayerView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         PlayerView()
-            .preferredColorScheme(.dark)
     }
 }

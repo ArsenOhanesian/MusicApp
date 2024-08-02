@@ -42,6 +42,6 @@ struct SongCell: View{
 struct MusicCell_Previews: PreviewProvider {
     static var previews: some View {
         SongCell(song: SongModel(name: "JS", data: Data(), author: nil, coverImage: Data(), duration: 0))
-            .preferredColorScheme(.dark)
     }
 }
+
