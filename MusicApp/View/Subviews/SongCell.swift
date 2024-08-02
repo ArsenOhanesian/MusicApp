@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MusicCell: View{
+struct SongCell: View{
     // MARK: - Properties
     let name: String
     let author: String
@@ -41,6 +41,6 @@ struct MusicCell: View{
 // MARK: - Preview
 struct MusicCell_Previews: PreviewProvider {
     static var previews: some View {
-        MusicCell(name: "Name", author: "Author", time: "Time")
+        SongCell(name: "Name", author: "Author", time: "Time")
     }
 }
