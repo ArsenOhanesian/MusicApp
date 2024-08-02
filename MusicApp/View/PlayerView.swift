@@ -9,17 +9,39 @@ import SwiftUI
 
 struct PlayerView: View {
     // MARK: - Properties
-    
+    @StateObject var vm = ViewModel()
     
     // MARK: - Body
     var body: some View {
-        ZStack{
+        
+        NavigationStack{
+            ZStack{
+                
+                BackgroundView()
+                
+                /// List of SOngs
+                List{
+                    ForEach(vm.songs){ song in
+                        SongCell(song: song)
+                    }
+                }
+                .listStyle(.plain)
+                
+            }
             
-        BackgroundView()
-            List(songs){ song in
-                SongCell(song: song)
-            }.listStyle(.plain)
-            
+            // MARK: - Navigation Bar
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "plus")
+                            .font(.title2)
+                            .foregroundStyle(.white)
+                    }
+
+                }
+            }
         }
     }
 }
