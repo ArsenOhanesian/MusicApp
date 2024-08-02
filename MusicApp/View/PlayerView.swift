@@ -9,18 +9,16 @@ import SwiftUI
 
 struct PlayerView: View {
     // MARK: - Properties
-    @State var song: [SongModel] = []
+    
     
     // MARK: - Body
     var body: some View {
         ZStack{
             
-            BackgroundView()
-            
-            List{
-                SongCell(name: "Name", author: "Author", time: "Time")
-            }
-            .listStyle(.plain)
+        BackgroundView()
+            List(songs){ song in
+                SongCell(song: song)
+            }.listStyle(.plain)
             
         }
     }

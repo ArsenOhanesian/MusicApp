@@ -9,9 +9,7 @@ import SwiftUI
 
 struct SongCell: View{
     // MARK: - Properties
-    let name: String
-    let author: String
-    let time: String
+    let song: SongModel
     
     // MARK: - Body
     var body: some View{
@@ -20,16 +18,18 @@ struct SongCell: View{
                 .frame(width: 60, height: 60)
                 .cornerRadius(10)
             
+            
+            
             VStack (alignment: .leading){
-                Text(name)
+                Text(song.name)
                     .nameFont()
-                Text(author)
+                Text(song.author ?? "Unknown Artist")
                     .artistFont()
             }
             
             Spacer()
             
-            Text(time)
+            Text("03:48")
                 .artistFont()
         }
         .listRowBackground(Color.clear)
@@ -41,6 +41,7 @@ struct SongCell: View{
 // MARK: - Preview
 struct MusicCell_Previews: PreviewProvider {
     static var previews: some View {
-        SongCell(name: "Name", author: "Author", time: "Time")
+        SongCell(song: SongModel(name: "JS", data: Data(), author: nil, coverImage: Data(), duration: 0))
+            .preferredColorScheme(.dark)
     }
 }
