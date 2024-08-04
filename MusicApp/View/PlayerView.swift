@@ -36,7 +36,7 @@ struct PlayerView: View {
                         }
                     }
                     .listStyle(.plain)
-                    
+
                     Spacer()
                     // MARK: - Player
                     VStack{
@@ -44,6 +44,7 @@ struct PlayerView: View {
                         HStack{
                             Color.gray
                                 .frame(width: frameImage, height: frameImage)
+                            
                             
                             if !showFullPlayer{
                                 
@@ -112,10 +113,13 @@ struct PlayerView: View {
                                     }
                                 }
                             }
+                            .padding(.horizontal, 40)
                             
                         }
                     }
-                    .frame(height: showFullPlayer ? UIScreen.main.bounds.height + 250 : 70)
+                    .frame(height: showFullPlayer
+                           ? SizeConstants.fullPlayer
+                           : SizeConstants.compactPlayer)
                     .onTapGesture {
                         withAnimation(.spring) {
                             self.showFullPlayer.toggle()
