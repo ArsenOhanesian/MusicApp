@@ -12,7 +12,6 @@ struct PlayerView: View {
     @StateObject var vm = ViewModel()
     @State private var showFiles = false
     @State private var showFullPlayer = false
-    @State private var isDragging = false
     @Namespace private var playAnimation
     
     var frameImage: CGFloat {
@@ -114,7 +113,19 @@ struct PlayerView: View {
                     .padding()
                     
                     /// Slider
-//                    Slider(
+                    Slider(value: $vm.currentTime, in: 0...vm.durationTime){ editing in
+                        
+                        if !editing{
+                            vm.seekAudio(time: vm.currentTime)
+                        }
+                    }
+                    .offset(y: -18)
+                    .accentColor(.white)
+                    .onAppear{
+                        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+                            vm.updateProgress()
+                        }
+                    }
                     
                     
                     ManagmentAudioView()
