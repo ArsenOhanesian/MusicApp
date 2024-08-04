@@ -96,7 +96,7 @@ struct ImportFileManager: UIViewControllerRepresentable{
                 let isDublicate = songs.contains {$0.name == song.name && $0.author == song.author }
                 
                 /// Adding song to array of songs if this song no exist
-                if isDublicate {
+                if !isDublicate {
                     $songs.append(song)
                 } else{
                     print("Error song with the same name already added!")
