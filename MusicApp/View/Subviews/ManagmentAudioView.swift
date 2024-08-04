@@ -8,18 +8,26 @@
 import SwiftUI
 
 struct ManagmentAudioView: View {
+    // MARK: - Properties
     let isSongPlaying: Bool
     let pauseAction: () -> ()
     let forwardAction: () -> ()
     let backwardAction: () -> ()
+    
+    // MARK: - Body
     var body: some View {
         HStack(spacing: 40){
-            CustomButton(img: "backward.end.fill", size: .title2, action: backwardAction)
+            CustomButton(img: "backward.end.fill", 
+                         size: .title2,
+                         action: backwardAction)
             
             CustomButton(img: isSongPlaying ? "pause.circle.fill" : "play.circle.fill",
-                         size: .largeTitle, action: pauseAction)
+                         size: .largeTitle, 
+                         action: pauseAction)
             
-            CustomButton(img: "forward.end.fill", size: .title2, action: forwardAction)
+            CustomButton(img: "forward.end.fill", 
+                         size: .title2,
+                         action: forwardAction)
         }
     }
 }

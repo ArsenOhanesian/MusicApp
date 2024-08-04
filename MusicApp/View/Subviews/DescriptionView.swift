@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct DescriptionView: View {
+    // MARK: - Properties
     let currentSong: SongModel?
     @Namespace var playAnimation
     
+    // MARK: - Body
     var body: some View {
         VStack{
             if let currentSong = currentSong{

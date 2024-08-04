@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct CustomButton: View {
+    // MARK: - Properties
     let img: String
     let size: Font
     let action: () -> ()
     
+    // MARK: - Body
     var body: some View {
         Button(action: action) {
             Image(systemName: img)
