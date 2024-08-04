@@ -14,9 +14,16 @@ struct SongCell: View{
     // MARK: - Body
     var body: some View{
         HStack{
-            Color.white
-                .frame(width: 60, height: 60)
-                .cornerRadius(10)
+            if let data = song.coverImage, let uiImage = UIImage(data: data){
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .frame(width: 60, height: 60)
+            }
+            else{
+                Color.gray
+                    .frame(width: 60, height: 60)
+                    .cornerRadius(10)
+            }
             
             
             

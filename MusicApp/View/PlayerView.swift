@@ -19,7 +19,7 @@ struct PlayerView: View {
             ZStack{
                 BackgroundView()
                 
-                /// List of Songs
+        /// List of Songs
                 List{
                     ForEach(vm.songs){ song in
                         SongCell(song: song)
