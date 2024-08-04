@@ -18,13 +18,21 @@ struct SongCell: View{
                 Image(uiImage: uiImage)
                     .resizable()
                     .frame(width: 60, height: 60)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
             }
             else{
-                Color.gray
-                    .frame(width: 60, height: 60)
-                    .cornerRadius(10)
+                ZStack{
+                    Color.gray
+                        .frame(width: 60, height: 60)
+                    
+                    Image(systemName: "music.note")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 30)
+                        .foregroundStyle(.white)
+                }
+                .cornerRadius(10)
             }
-            
             
             
             VStack (alignment: .leading){
