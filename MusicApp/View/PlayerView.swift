@@ -81,8 +81,9 @@ struct PlayerView: View {
                 if !showFullPlayer{
                     DescriptionView(currentSong: vm.currentSong)
                     Spacer()
-                    CustomButton(img: "play.fill", size: .title) {
-                        
+                    CustomButton(img: vm.isSongPlaying ? "pause.fill" : "play.fill", 
+                                 size: .title) {
+                        vm.playPauseAudio()
                     }
                 }
                 
@@ -103,9 +104,9 @@ struct PlayerView: View {
                 /// Duration song
                 VStack {
                     HStack{
-                        Text("00:00")
+                        Text("\(vm.durationFormatted(vm.currentTime))")
                         Spacer()
-                        Text("03:27")
+                        Text("\(vm.durationFormatted(vm.durationTime))")
                         
                     }
                     .durationFont()
