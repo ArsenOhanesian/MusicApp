@@ -10,6 +10,7 @@ import SwiftUI
 struct SongCell: View{
     // MARK: - Properties
     let song: SongModel
+    let durationFormatted: (TimeInterval) -> String
     
     // MARK: - Body
     var body: some View{
@@ -43,9 +44,12 @@ struct SongCell: View{
             }
             
             Spacer()
+            if let duration = song.duration{
+                Text(durationFormatted(duration))
+                    .artistFont()
+            }
             
-            Text("03:48")
-                .artistFont()
+            
         }
         .listRowBackground(Color.clear)
         .listRowSeparator(.hidden)
@@ -56,7 +60,7 @@ struct SongCell: View{
 // MARK: - Preview
 struct MusicCell_Previews: PreviewProvider {
     static var previews: some View {
-        SongCell(song: SongModel(name: "JS", data: Data(), author: nil, coverImage: Data(), duration: 0))
+        PlayerView()
     }
 }
 

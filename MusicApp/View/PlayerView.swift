@@ -22,7 +22,7 @@ struct PlayerView: View {
         /// List of Songs
                 List{
                     ForEach(vm.songs){ song in
-                        SongCell(song: song)
+                        SongCell(song: song, durationFormatted: vm.durationFormatted)
                     }
                 }
                 .listStyle(.plain)
