@@ -7,11 +7,10 @@
 
 import SwiftUI
 import AVFoundation
+import RealmSwift
 
 /// ImportFileManager can select and import audio files in application
 struct ImportFileManager: UIViewControllerRepresentable{
-    
-    @Binding var songs: [SongModel]
     
     /// Coordinator manage tasks between SwiftUI and UIKit
     func makeCoordinator() -> Coordinator {
@@ -43,14 +42,18 @@ struct ImportFileManager: UIViewControllerRepresentable{
     
     /// Coordinator is connecting link between UIDocumentPicker and ImportFileManager
     class Coordinator: NSObject, UIDocumentPickerDelegate{
-        
+        // MARK: - Properties
         /// Link on parent component ImportFileManeger
         var parent: ImportFileManager
+        @ObservedResults(SongModel.self) var songs
         
+        // MARK: - Initializator
         init(parent: ImportFileManager) {
             self.parent = parent
         }
         
+        
+        // MARK: - Methods
         /// This method called when user selected a song
         /// And method processes url and create a song with type SongModel
         func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
@@ -90,11 +93,11 @@ struct ImportFileManager: UIViewControllerRepresentable{
                 /// Get duration of song
                 song.duration = CMTimeGetSeconds(asset.duration)
                 
+                let isDublicate = songs.contains {$0.name == song.name && $0.author == song.author }
+                
                 /// Adding song to array of songs if this song no exist
-                if !self.parent.songs.contains(where: { $0.name == song.name }) {
-                    DispatchQueue.main.async {
-                        self.parent.songs.append(song)
-                    }
+                if isDublicate {
+                    $songs.append(song)
                 } else{
                     print("Error song with the same name already added!")
                 }
