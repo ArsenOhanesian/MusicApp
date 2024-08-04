@@ -7,10 +7,11 @@
 
 import Foundation
 import AVFAudio
+import RealmSwift
 
 class ViewModel: NSObject, ObservableObject{
     // MARK: - Propeties
-    @Published var songs: [SongModel] = []
+    @ObservedResults(SongModel.self) var songs
     @Published var audioPlayer: AVAudioPlayer?
     @Published var isSongPlaying: Bool = false
     @Published var currentIndexOfSong: Int?
@@ -86,12 +87,6 @@ class ViewModel: NSObject, ObservableObject{
         return timeFormatter.string(from: duration) ?? ""
     }
     
-    func deleteAudio(offset: IndexSet) {
-        if let first = offset.first {
-            stopAudio()
-            songs.remove(at: first)
-        }
-    }
 }
 
 
