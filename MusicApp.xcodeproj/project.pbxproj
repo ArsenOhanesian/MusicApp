@@ -23,6 +23,7 @@
 		81BCB2602C5F913500D7F7D9 /* CoverImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BCB25F2C5F913500D7F7D9 /* CoverImageView.swift */; };
 		81BCB2622C5F924900D7F7D9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BCB2612C5F924900D7F7D9 /* CustomButton.swift */; };
 		81BCB2642C5F92D000D7F7D9 /* ManagmentAudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BCB2632C5F92D000D7F7D9 /* ManagmentAudioView.swift */; };
+		81BCB2682C5FAFDD00D7F7D9 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 81BCB2672C5FAFDD00D7F7D9 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81BCB2682C5FAFDD00D7F7D9 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +171,9 @@
 			dependencies = (
 			);
 			name = MusicApp;
+			packageProductDependencies = (
+				81BCB2672C5FAFDD00D7F7D9 /* RealmSwift */,
+			);
 			productName = MusicApp;
 			productReference = 04BCB5982C5A4FBD00E47885 /* MusicApp.app */;
 			productType = "com.apple.product-type.application";
@@ -197,6 +202,9 @@
 				Base,
 			);
 			mainGroup = 04BCB58F2C5A4FBD00E47885;
+			packageReferences = (
+				81BCB2662C5FAFDD00D7F7D9 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 04BCB5992C5A4FBD00E47885 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -437,6 +445,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		81BCB2662C5FAFDD00D7F7D9 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		81BCB2672C5FAFDD00D7F7D9 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 81BCB2662C5FAFDD00D7F7D9 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 04BCB5902C5A4FBD00E47885 /* Project object */;
 }
