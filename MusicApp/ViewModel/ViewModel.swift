@@ -13,6 +13,12 @@ class ViewModel: ObservableObject{
     @Published var songs: [SongModel] = []
     @Published var audioPlayer: AVAudioPlayer?
     @Published var isSongPlaying: Bool = false
+    @Published var currentIndexOfSong: Int?
+    
+    var currentSong: SongModel? {
+        guard let currentIndex = currentIndexOfSong, songs.indices.contains(currentIndex) else { return nil }
+        return songs[currentIndex]
+    }
     
     // MARK: - Methods
     func playAuido(song: SongModel){
@@ -20,6 +26,9 @@ class ViewModel: ObservableObject{
             self.audioPlayer = try AVAudioPlayer(data: song.data)
             self.audioPlayer?.play()
             isSongPlaying = true
+            if let index = songs.firstIndex(where: { $0.id == song.id }){
+                currentIndexOfSong = index
+            }
         } catch {
             print("Error in audio playback: \(error.localizedDescription)")
         }

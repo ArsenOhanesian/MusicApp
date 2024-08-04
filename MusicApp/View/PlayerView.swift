@@ -25,7 +25,7 @@ struct PlayerView: View {
             ZStack{
                 BackgroundView()
                 
-        /// List of Songs
+                /// List of Songs
                 VStack {
                     List{
                         ForEach(vm.songs){ song in
@@ -36,94 +36,12 @@ struct PlayerView: View {
                         }
                     }
                     .listStyle(.plain)
-
+                    
                     Spacer()
+                    
                     // MARK: - Player
-                    VStack{
-                        /// Compact Player
-                        HStack{
-                            Color.gray
-                                .frame(width: frameImage, height: frameImage)
-                            
-                            
-                            if !showFullPlayer{
-                                
-                                VStack(alignment: .leading){
-                                    Text("Name of song")
-                                        .nameFont()
-                                    Text("Author")
-                                        .artistFont()
-                                    
-                                }
-                                .matchedGeometryEffect(id: "Description", in: playAnimation)
-                                
-                                Spacer()
-                                
-                                CustomButton(img: "play.fill", size: .title) {
-                                    
-                                }
-                            }
-                            
-                            
-                        }
-                        .padding()
-                        .background(showFullPlayer ? .clear : .black.opacity(0.3))
-                        .cornerRadius(10)
-                        .padding()
-                        
-                        /// Full Player
-                        
-                        if showFullPlayer {
-                            /// Description song
-                            VStack{
-                              Text("Name")
-                                    .nameFont()
-                                Text("Artist")
-                                    .artistFont()
-                            }
-                            .matchedGeometryEffect(id: "Description", in: playAnimation)
-                            .padding(.top)
-                            
-                            /// Duration song
-                            VStack {
-                                HStack{
-                                    Text("00:00")
-                                    Spacer()
-                                    Text("03:27")
-                                        
-                                }
-                                .durationFont()
-                                .padding()
-                                
-                                /// Slider
-                                Divider()
-                                
-                                
-                                HStack(spacing: 40){
-                                    CustomButton(img: "backward.end.fill", size: .title2) {
-                                        
-                                    }
-                                    
-                                    CustomButton(img: "play.circle.fill", size: .largeTitle) {
-                                        
-                                    }
-                                    
-                                    CustomButton(img: "forward.end.fill", size: .title2) {
-                                        
-                                    }
-                                }
-                            }
-                            .padding(.horizontal, 40)
-                            
-                        }
-                    }
-                    .frame(height: showFullPlayer
-                           ? SizeConstants.fullPlayer
-                           : SizeConstants.compactPlayer)
-                    .onTapGesture {
-                        withAnimation(.spring) {
-                            self.showFullPlayer.toggle()
-                        }
+                    if vm.currentSong != nil {
+                        Player()
                     }
                 }
                 
@@ -152,11 +70,64 @@ struct PlayerView: View {
     }
     
     // MARK: - Methods
-    private func CustomButton(img: String, size: Font ,action: @escaping () -> () ) -> some View{
-        Button(action: action) {
-            Image(systemName: img)
-                .foregroundStyle(.white)
-                .font(size)
+    
+    @ViewBuilder
+    private func Player() -> some View{
+        VStack{
+            /// Compact Player
+            HStack{
+                CoverImageView(currentSong: vm.currentSong, frameImage: frameImage)
+                
+                if !showFullPlayer{
+                    DescriptionView(currentSong: vm.currentSong)
+                    Spacer()
+                    CustomButton(img: "play.fill", size: .title) {
+                        
+                    }
+                }
+                
+                
+            }
+            .padding()
+            .background(showFullPlayer ? .clear : .black.opacity(0.3))
+            .cornerRadius(10)
+            .padding()
+            
+            /// Full Player
+            
+            if showFullPlayer {
+                /// Description song
+                DescriptionView(currentSong: vm.currentSong)
+                .padding(.top)
+                
+                /// Duration song
+                VStack {
+                    HStack{
+                        Text("00:00")
+                        Spacer()
+                        Text("03:27")
+                        
+                    }
+                    .durationFont()
+                    .padding()
+                    
+                    /// Slider
+                    Divider()
+                    
+                    
+                    ManagmentAudioView()
+                }
+                .padding(.horizontal, 40)
+                
+            }
+        }
+        .frame(height: showFullPlayer
+               ? SizeConstants.fullPlayer
+               : SizeConstants.compactPlayer)
+        .onTapGesture {
+            withAnimation(.spring) {
+                self.showFullPlayer.toggle()
+            }
         }
     }
 }
@@ -167,3 +138,7 @@ struct ContentView_Previews: PreviewProvider {
         PlayerView()
     }
 }
+
+
+
+
