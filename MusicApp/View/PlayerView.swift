@@ -34,9 +34,13 @@ struct PlayerView: View {
                             SongCell(song: song, durationFormatted: vm.durationFormatted)
                                 .onTapGesture {
                                     vm.playAuido(song: song)
+                                    
                                 }
                         }
-                        .onDelete(perform: $songs.remove)
+                        .onDelete { indexSet in
+                            vm.stopAudio()
+                            $songs.remove(atOffsets: indexSet)
+                        }
                     }
                     .listStyle(.plain)
                     
