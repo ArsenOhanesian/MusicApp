@@ -43,6 +43,7 @@
 		81BCB25F2C5F913500D7F7D9 /* CoverImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverImageView.swift; sourceTree = "<group>"; };
 		81BCB2612C5F924900D7F7D9 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		81BCB2632C5F92D000D7F7D9 /* ManagmentAudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagmentAudioView.swift; sourceTree = "<group>"; };
+		81BCB2652C5FACE000D7F7D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +145,7 @@
 		04C234B82C5A588800BFE321 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				81BCB2652C5FACE000D7F7D9 /* Info.plist */,
 				04C234B22C5A56BE00BFE321 /* Extensions */,
 				04C234C12C5CCD3700BFE321 /* ImportFileManager.swift */,
 				81BCB25B2C5F853000D7F7D9 /* SizeConstants.swift */,
@@ -365,6 +367,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MusicApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MusicApp/Helpers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -393,6 +396,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MusicApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MusicApp/Helpers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -50,6 +50,12 @@ class ViewModel: NSObject, ObservableObject{
         isSongPlaying.toggle()
     }
     
+    func stopAudio() {
+        self.audioPlayer?.stop()
+        self.audioPlayer = nil
+        self.isSongPlaying = false
+    }
+    
     func forwardAudio(){
         guard let index = currentIndexOfSong else { return }
         let nextIndex = index + 1 < songs.count ? index + 1 : 0
@@ -80,6 +86,12 @@ class ViewModel: NSObject, ObservableObject{
         return timeFormatter.string(from: duration) ?? ""
     }
     
+    func deleteAudio(offset: IndexSet) {
+        if let first = offset.first {
+            stopAudio()
+            songs.remove(at: first)
+        }
+    }
 }
 
 

@@ -28,7 +28,7 @@ struct CoverImageView: View {
                 Image(systemName: "music.note")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(height: 30)
+                    .frame(height: frameImage / 2)
                     .foregroundStyle(.white)
             }
             .cornerRadius(10)

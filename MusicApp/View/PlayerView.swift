@@ -34,6 +34,9 @@ struct PlayerView: View {
                                     vm.playAuido(song: song)
                                 }
                         }
+                        .onDelete(perform: { indexSet in
+                            vm.deleteAudio(offset: indexSet)
+                        })
                     }
                     .listStyle(.plain)
                     
