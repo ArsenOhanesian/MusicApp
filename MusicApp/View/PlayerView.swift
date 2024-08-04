@@ -23,6 +23,9 @@ struct PlayerView: View {
                 List{
                     ForEach(vm.songs){ song in
                         SongCell(song: song, durationFormatted: vm.durationFormatted)
+                            .onTapGesture {
+                                vm.playAuido(song: song)
+                            }
                     }
                 }
                 .listStyle(.plain)

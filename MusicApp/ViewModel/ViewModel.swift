@@ -6,11 +6,24 @@
 //
 
 import Foundation
+import AVFAudio
 
 class ViewModel: ObservableObject{
-    
+    // MARK: - Propeties
     @Published var songs: [SongModel] = []
+    @Published var audioPlayer: AVAudioPlayer?
+    @Published var isSongPlaying: Bool = false
     
+    // MARK: - Methods
+    func playAuido(song: SongModel){
+        do{
+            self.audioPlayer = try AVAudioPlayer(data: song.data)
+            self.audioPlayer?.play()
+            isSongPlaying = true
+        } catch {
+            print("Error in audio playback: \(error.localizedDescription)")
+        }
+    }
     
     func durationFormatted(_ duration: TimeInterval) -> String{
         let timeFormatter = DateComponentsFormatter()
