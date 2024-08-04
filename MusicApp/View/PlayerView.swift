@@ -128,7 +128,10 @@ struct PlayerView: View {
                     }
                     
                     
-                    ManagmentAudioView()
+                    ManagmentAudioView(isSongPlaying: vm.isSongPlaying, 
+                                       pauseAction: vm.playPauseAudio,
+                                       forwardAction: vm.forwardAudio,
+                                       backwardAction: vm.backwardAudio)
                 }
                 .padding(.horizontal, 40)
                 
