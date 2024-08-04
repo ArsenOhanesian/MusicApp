@@ -25,7 +25,7 @@ struct PlayerView: View {
             ZStack{
                 BackgroundView()
                 
-                /// List of Songs
+                // MARK: - List of Songs
                 VStack {
                     List{
                         ForEach(vm.songs){ song in
@@ -44,9 +44,6 @@ struct PlayerView: View {
                         Player()
                     }
                 }
-                
-                
-                
             }
             // MARK: - Navigation Bar
             .toolbar {

@@ -8,7 +8,7 @@
 import Foundation
 import AVFAudio
 
-class ViewModel: ObservableObject{
+class ViewModel: NSObject, ObservableObject{
     // MARK: - Propeties
     @Published var songs: [SongModel] = []
     @Published var audioPlayer: AVAudioPlayer?
@@ -26,7 +26,9 @@ class ViewModel: ObservableObject{
     func playAuido(song: SongModel){
         do{
             self.audioPlayer = try AVAudioPlayer(data: song.data)
+            self.audioPlayer?.delegate = self
             self.audioPlayer?.play()
+            
             isSongPlaying = true
             durationTime = audioPlayer?.duration ?? 0.0
             if let index = songs.firstIndex(where: { $0.id == song.id }){
@@ -76,5 +78,15 @@ class ViewModel: ObservableObject{
         timeFormatter.zeroFormattingBehavior = .pad
         
         return timeFormatter.string(from: duration) ?? ""
+    }
+    
+}
+
+
+extension ViewModel: AVAudioPlayerDelegate{
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        if flag {
+            self.forwardAudio()
+        }
     }
 }
