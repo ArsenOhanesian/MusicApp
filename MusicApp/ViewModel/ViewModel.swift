@@ -48,6 +48,15 @@ class ViewModel: ObservableObject{
         isSongPlaying.toggle()
     }
     
+    func seekAudio(time: TimeInterval){
+        self.audioPlayer?.currentTime = time
+    }
+    
+    func updateProgress() {
+        guard let player = audioPlayer else { return }
+        currentTime = player.currentTime
+    }
+    
     func durationFormatted(_ duration: TimeInterval) -> String{
         let timeFormatter = DateComponentsFormatter()
         timeFormatter.allowedUnits = [.minute, .second]

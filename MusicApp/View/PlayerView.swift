@@ -12,6 +12,7 @@ struct PlayerView: View {
     @StateObject var vm = ViewModel()
     @State private var showFiles = false
     @State private var showFullPlayer = false
+    @State private var isDragging = false
     @Namespace private var playAnimation
     
     var frameImage: CGFloat {
@@ -113,7 +114,7 @@ struct PlayerView: View {
                     .padding()
                     
                     /// Slider
-                    Divider()
+//                    Slider(
                     
                     
                     ManagmentAudioView()
